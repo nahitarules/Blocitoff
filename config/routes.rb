@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   get 'welcome/about'
 
   get 'welcome/index'
-  resources :items 
+  resources :items
   resources :users do
-    resources :items, only: [:new, :create]
+    resources :items, only: [:new, :create, :destroy]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

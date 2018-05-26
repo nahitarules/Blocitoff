@@ -17,6 +17,24 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+
+    @item = current_user.items.find(params[:id])
+
+    if @item.destroy
+      flash[:notice] = "Completed"
+    else
+      flash[:alert] = "Item couldn't be completed"
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
+   end
+
+  end
+
+
   private
 
   def item_params
