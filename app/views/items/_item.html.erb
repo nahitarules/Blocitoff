@@ -1,11 +1,18 @@
 
 <% @items.each do |item| %>
-<div class="media" id="item-<%= item.id %>">
-  <div class="media-body">
-    <h4 class="media-heading">
-      <%= item.name %>
-      <%= link_to "",  item, method: :delete, class: 'glyphicon glyphicon-ok', remote: true %>
-    </h4>
+
+  <div class="container" id="item-<%= item.id %>">
+    <div class="row">
+      <div class="col-sm">
+        <h4><%= item.name %></h4>
+        <div class="col-sm">
+          <%= link_to "",  item, method: :delete, class: 'glyphicon glyphicon-ok', remote: true %>
+        </div>
+          <div class="col-sm">
+            <%= distance_of_time_in_words(Time.now, item.created_at.to_date + 7 ) %> left <br>
+          </div>
+        </div>
+      </div>
   </div>
-</div>
+
 <% end %>
