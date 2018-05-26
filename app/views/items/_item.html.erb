@@ -6,10 +6,10 @@
       <div class="col-sm">
         <h4><%= item.name %></h4>
         <div class="col-sm">
-          <%= link_to "",  item, method: :delete, class: 'glyphicon glyphicon-ok', remote: true %>
+          <%= link_to "", item, method: :delete, class: 'glyphicon glyphicon-ok', remote: true %>
         </div>
           <div class="col-sm">
-            <%= distance_of_time_in_words(Time.now, item.created_at.to_date + 7 ) %> left <br>
+            <%= distance_of_time_in_words(Time.now, item.created_at + 7.days ) %> left <br>
           </div>
         </div>
       </div>
