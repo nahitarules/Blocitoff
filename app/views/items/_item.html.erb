@@ -1,0 +1,10 @@
+
+<% @items.each do |item| %>
+<div class="media" id="item-<%= item.id %>">
+  <div class="media-body">
+    <h4 class="media-heading">
+      <%= item.name %>
+    </h4>
+  </div>
+</div>
+<% end %>
